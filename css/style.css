@@ -72,6 +72,13 @@
 	position: relative;
 	width: 390px;
 }
+.sousuo .sousuo3-d1 span{
+	position: absolute;
+	top: 6px;
+	left: 30px;
+	font-size: 16px;
+	color: #ccc;
+}
 .sousuo3-d-fixed{
 	position: fixed;
     top: 5px;
@@ -576,6 +583,12 @@
 	left: 0;
 	width: 830px;
 	height: 471px;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.banner .banner2-d1>ul .dongtu{
+	opacity: 1;
+	z-index: 5;
 }
 .banner .banner2-d1 ul li .banner2-d2-a1{
 	top: 0;
@@ -601,6 +614,7 @@
 	height: 64px;
 	top: 180px;
 	background: url(../img/index.png);
+	z-index: 11;
 }
 .banner .btn-left{
 	left: 50%;
@@ -633,6 +647,7 @@
 	padding: 0 8px 0 0;
 	height: 20px;
 	cursor: pointer;
+	z-index: 20;
 }
 .banner2-d2 .banner-yuan i{
 	position: relative;
@@ -643,8 +658,8 @@
 	background:rgba(255,255,255,0.5);
 	border-radius: 10px;
 }
-.banner2-d2 .banner-yuan .on{
-	background-position: 0 -100px;
+.banner2-d2 .banner-yuan i.on{
+	background:yellow;
 }
 .banner3{
 	position: absolute;
@@ -819,6 +834,7 @@
     left: 277px;
     width: 816px;
     height: 122px;
+	z-index: 20;
 }
 .banner4 ul li{
 	float: left;
@@ -1030,6 +1046,7 @@
     top: 0;
     width: 4000px;
     height: 240px;
+	transition: all 0.5s;
 }
 .djh2 .djh-img1 ul li{
 	position: relative;
@@ -1162,12 +1179,13 @@
 }
 .haohuo3 .content{
 	position: relative;
+	width: 390px;
     height: 382px;
     overflow: hidden;
 }
 .haohuo3 .content ul{
 	position: absolute;
-    width: 5000px;
+    width: 500%;
     height: 362px;
 	left: 0;
 }
@@ -1464,7 +1482,7 @@
 	position: absolute;
     left: 0;
     top: 0;
-    width: 780px;
+    width: 400%;
 }
 .haohuo1 .content .comm-list-wrapper .jx-wrapper ul{
 	float: left;
@@ -2117,9 +2135,10 @@
 .enter-v7 .video-area .big-show ul{
 	width:100%;
 	height: 100%;
+	position: relative;
 }
 .enter-v7 .video-area .big-show ul li{
-	position: relative;
+	position: absolute;
     display: none;
     width: 100%;
     height: 100%;
