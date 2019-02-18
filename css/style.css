@@ -1117,9 +1117,6 @@
 	right: 10px;
     background-position: -37px -20px;
 }
-.djh-img1 li:hover img{
-	transform: scale(1.05);
-}
 .djh-img1 li:hover .name{
 	color: #f60;
 }

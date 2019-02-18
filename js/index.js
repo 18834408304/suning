@@ -122,10 +122,10 @@ window.onload = function(){
 	function moveB(){
 		bigbox.style.left = -nC*390+"px";
 		bigbox.style.transition = "all 0.5s";
-// 		colorYuan.forEach(function(val){
-// 			val.classList.remove("color");
-// 		})
-// 		colorYuan[nC].classList.add("color");
+		colorYuan.forEach(function(val){
+			val.classList.remove("color");
+		})
+		colorYuan[nC-2].classList.add("color");
 	}
 	bigbox.addEventListener("transitionend",function(){            //动画结束之后执行以下条件
 		flag = true;
@@ -180,6 +180,10 @@ window.onload = function(){
 		function moveP(){
 			paibox.style.left = -nP*390+"px";
 			paibox.style.transition = "all 0.5s";
+			paiYuan.forEach(function(val){
+				val.classList.remove("current");
+			})
+			paiYuan[nP-2].classList.add("current");
 		}
 		paibox.addEventListener("transitionend",function(){            //动画结束之后执行以下条件
 			flagP = true;
@@ -235,34 +239,99 @@ window.onload = function(){
 		
 		
 		//左侧边栏的隐藏显示
-		let barx = document.querySelector(".aside-left");
-		let lc1 = document.querySelector(".lcx");
-		let root = document.documentElement;
-		if(root.scrollTop >= lc1.offsetTop){
-			barx.style.display = "block";
-		}
-		window.onscroll = function(){
-			if(root.scrollTop >= lc1.offsetTop){
-				setTimeout(function(){
-					if(root === document.documentElement&&root.scrollTop != 0){
-						barx.style.display = "block";
-					}
-				},1000)
-			}else if(root.scrollTop == 0){
-				barx.style.display = "none";
-			}
-		}
+// 		let barx = document.querySelector(".aside-left");
+// 		let lc1 = document.querySelector(".lcx");
+// 		let root = document.documentElement;
+// 		if(root.scrollTop >= lc1.offsetTop){
+// 			barx.style.display = "block";
+// 		}
+// 		window.onscroll = function(){
+// 			if(root.scrollTop >= lc1.offsetTop){
+// 				setTimeout(function(){
+// 					if(root === document.documentElement&&root.scrollTop != 0){
+// 						barx.style.display = "block";
+// 					}
+// 				},1000)
+// 			}else if(root.scrollTop == 0){
+// 				barx.style.display = "none";
+// 			}
+// 		}
 		
 		
 		//苏宁极物选项卡
 		let smallXuan = document.querySelectorAll(".enter-v7 .video-area .small-show ul li");
 		let bigXuan = document.querySelectorAll(".enter-v7 .video-area .big-show ul li");
+		let snyp = document.getElementById("sn-yp");
 		smallXuan.forEach(function(val,index){
 			val.onmouseover = function(){
-				bigXuan[index].classList.add("cur")
-			}
-			val.onmouseout = function(){
-				bigXuan[index].classList.remove("cur")
+				snyp.src = "img/"+"show" +(index+1) +".png";
 			}
 		})
+		
+		
+		
+		
+		// 左侧边栏的楼层跳转
+// 		let leftC = document.querySelectorAll(".aside-left li");
+// 		let rightC = document.querySelectorAll(".dazhongjian .louceng");
+// 		let barx = document.querySelector(".aside-left");
+// 		let lc1 = document.querySelector(".lcx");
+// 		let root1 = document.documentElement;
+// 		let speedC = 5;
+// 		let maxscroll = root1.offsetHeight - window.innerHeight;
+// 		let flag1 = true;
+// // 		if(root1.scrollTop >= lc1.offsetTop){
+// // 			barx.style.display = "block";
+// // 		}
+// 		leftC.forEach(function(val, index) {
+// 			val.onclick = function() {
+// 				flag1 = false;
+// 				leftC.forEach(function(ele) {
+// 					ele.classList.remove("color");
+// 				});
+// 				leftC[index].classList.add("color");
+// 				if (root1.scrollTop + speedC > rightC[index].offsetTop) {
+// 					speedC = -15;
+// 				} else {
+// 					speedC = 15;
+// 				}
+// 				let time = setInterval(function() {
+// 					if (root1.scrollTop + speedC >= rightC[index].offsetTop && speedC > 0) {
+// 						root1.scrollTop = rightC[index].offsetTop;
+// 						clearInterval(time);
+// 						flag1 = true;
+// 					} else if (speedC < 0 && root1.scrollTop + speedC <= rightC[index].offsetTop) {
+// 						root1.scrollTop = right[index].offsetTop;
+// 						clearInterval(time);
+// 						flag1 = true;
+// 					} else if (speedC > 0 && maxscroll <= root1.scrollTop) {
+// 						clearInterval(time);
+// 						flag1 = true;
+// 					} else {
+// 						root1.scrollTop = root1.scrollTop + speedC;
+// 					}
+// 				},5);
+// 			}
+// 		});
+// 		window.onscroll = function() {
+// 			if (flag1) {
+// 				rightC.forEach(function(val, index) {
+// 					if (root1.scrollTop >= val.offsetTop && root1.scrollTop < val.offsetTop + val.offsetHeight) {
+// 						leftC[index].classList.add("color");
+// 					} else {
+// 						leftC[index].classList.remove("color");
+// 					}
+// 				});
+// 			}
+// 			if(root1.scrollTop >= lc1.offsetTop){
+// 				setTimeout(function(){
+// 					if(root1 === document.documentElement&&root1.scrollTop != 0){
+// 						barx.style.display = "block";
+// 					}
+// 				},1000)
+// 			}else if(root1.scrollTop <= lc1.offsetTop){
+// 				barx.style.display = "none";
+// 			}
+// 		}
+
 }
